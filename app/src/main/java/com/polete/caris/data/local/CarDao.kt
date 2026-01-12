@@ -31,5 +31,8 @@ interface CarDao {
     """)
     fun getParkedCars(): Flow<List<Car>>
 
+    @Query("SELECT * FROM car WHERE id = :id")
+    fun getCarById(id: Int): Flow<Car>
+
 
 }

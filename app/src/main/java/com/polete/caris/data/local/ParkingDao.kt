@@ -26,5 +26,8 @@ interface ParkingDao {
     @Query("SELECT * FROM parking WHERE carId IS NOT NULL")
     fun getFilledParking(): Flow<List<Parking>>
 
+    @Query("SELECT * FROM parking WHERE carId = :id")
+    fun getParkingByCarId(id: Int): Flow<Parking>
+
 
 }
